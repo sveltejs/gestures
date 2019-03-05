@@ -1,6 +1,6 @@
 # @sveltejs/gestures
 
-A (work-in-progress) collection of gestures recognisers for Svelte components.
+A (work-in-progress) collection of gesture recognisers for Svelte components.
 
 Each recogniser is implemented as an action that emits custom events. Pointer events are used where possible, falling back to mouse and touch events.
 
