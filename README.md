@@ -5,7 +5,7 @@ A (work-in-progress) collection of gestures recognisers for Svelte components.
 Each recogniser is implemented as an action that emits custom events. Pointer events are used where possible, falling back to mouse and touch events.
 
 
-## tap
+## tap ([demo](https://v3.svelte.technology/repl?version=3.0.0-beta.10&gist=ffbdb659f2c52c8510bec42af3ffb0d1))
 
 This action fires a `tap` event when the user taps on an element with either a mouse or a finger (or other pointing device). If the pointer is down for more than 300ms, it doesn't count, unlike with `click` events.
 
@@ -15,15 +15,15 @@ The `event.detail` object has `x` and `y` properties corresponding to `clientX` 
 
 ```html
 <script>
-	import { tap } from '@sveltejs/gestures';
+  import { tap } from '@sveltejs/gestures';
 
-	function handler(event) {
-		console.log(`the button was tapped at ${event.detail.x}, ${event.detail.y}`);
-	}
+  function handler(event) {
+    console.log(`the button was tapped at ${event.detail.x}, ${event.detail.y}`);
+  }
 </script>
 
 <button use:tap on:tap={handler}>
-	tap the button
+  tap the button
 </button>
 ```
 
