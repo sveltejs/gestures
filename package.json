@@ -1,0 +1,29 @@
+{
+  "name": "@sveltejs/gestures",
+  "description": "Svelte actions for cross-platform gesture detection",
+  "version": "0.0.1",
+  "repository": "sveltejs/gestures",
+  "main": "dist/gestures.js",
+  "module": "dist/gestures.mjs",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "devDependencies": {
+    "@types/node": "^10.9.4",
+    "rollup": "^0.65.2",
+    "rollup-plugin-sucrase": "^2.1.0",
+    "sander": "^0.6.0",
+    "tiny-glob": "^0.2.6",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "build-declarations": "tsc -d && node scripts/move-type-declarations.js",
+    "build": "npm run build-declarations && rollup -c",
+    "dev": "rollup -cw",
+    "test": "echo \"no tests. open the demos in a browser instead\"",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "LIL"
+}
