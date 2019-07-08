@@ -5,7 +5,7 @@ A (work-in-progress) collection of gesture recognisers for Svelte components.
 Each recogniser is implemented as an action that emits custom events. Pointer events are used where possible, falling back to mouse and touch events.
 
 
-## tap ([demo](https://v3.svelte.technology/repl?version=3.0.0-beta.10&gist=ffbdb659f2c52c8510bec42af3ffb0d1))
+## tap ([demo](https://svelte.dev/repl/ffbdb659f2c52c8510bec42af3ffb0d1?version=3.0.0-beta.10))
 
 This action fires a `tap` event when the user taps on an element with either a mouse or a finger (or other pointing device). If the pointer is down for more than 300ms, it doesn't count, unlike with `click` events.
 
