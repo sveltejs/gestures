@@ -27,8 +27,40 @@ The `event.detail` object has `x` and `y` properties corresponding to `clientX` 
 </button>
 ```
 
-TODO: `pan`, `swipe`, `rotate`, `pinch`, `press`
+## swipe
 
+This action include three events `swipe`, `swipestart` and `swipeend`. The `swipestart` event
+will fire when the pointer is down and the `swipeend` event is fired when the pointer is up, if after 300ms the pointermove event is not fired, the `swipe` and `swipeend` events are canceled.
+
+The `swipe` event will be fired if a minimal `TRESHOLD` distance is accomplished. This event will include in `event.detail` a `direction` string, which can be one of `left`, `right`, `up` and `down`, and a `distance` number.
+
+```html
+<script>
+  import { swipe } from '@sveltejs/gestures';
+
+  let active
+
+  function handler(event) {
+    console.log(`Swiped to the ${event.detail.direction}`)
+  }
+</script>
+
+<style>
+  .active {
+    background-color: #333;
+  }
+</style>
+
+<div
+  use:swipe
+  class:active
+  on:swipestart={e => active = true}
+  on:swipeend={e => active = false}
+  on:swipe={handler}
+></div>
+```
+
+TODO: `pan`, `rotate`, `pinch`, `press`
 
 ## License
 
